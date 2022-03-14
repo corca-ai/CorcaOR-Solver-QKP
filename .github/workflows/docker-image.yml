@@ -1,0 +1,19 @@
+name: Unit Test using docker
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag test_image
+    - name: Run Docker Container
+      run: docker run test_image
