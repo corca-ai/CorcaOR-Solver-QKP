@@ -1,4 +1,4 @@
-set(target_name "CorcaOR-Solver-Template")
+set(target_name "CorcaOR-Solver-MDMQKP")
 
 project(${target_name})
 
