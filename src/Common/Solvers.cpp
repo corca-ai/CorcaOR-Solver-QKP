@@ -1,6 +1,6 @@
-#include <MDMQKP/Solvers.hpp>
+#include <QKP/Solvers.hpp>
 
-namespace CorcaORBack::MDMQKP {
+namespace CorcaORBack::QKP {
     double QuadraticSolver::get_reward() {
         double ret = 0.0;
         for (int i = 0; i < program.n; i++) {

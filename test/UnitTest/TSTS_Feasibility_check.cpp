@@ -1,6 +1,6 @@
 #include "doctest.h"
 #include <random>
-#include <MDMQKP/MDMQKP.hpp>
+#include <QKP/QKP.hpp>
 #include <iostream>
 
 TEST_CASE("TSTS_Feasibility_Check"){
@@ -17,20 +17,20 @@ TEST_CASE("TSTS_Feasibility_Check"){
     }
 
     std::vector<double> constraints(m*(n+1));
-    std::vector<CorcaORBack::MDMQKP::ConstraintOperation> operators(m);
+    std::vector<CorcaORBack::QKP::ConstraintOperation> operators(m);
     for(int i=0;i<m;i++){
         constraints[i*(n+1) + i*3] = constraints[i*(n+1)+i*3+1] = constraints[i*(n+1)+i*3+2] = 1;
         constraints[i*(n+1)+n] = rand()%4;
         if(rand()%2){
-            operators[i] = CorcaORBack::MDMQKP::ConstraintOperation::LEQ;
+            operators[i] = CorcaORBack::QKP::ConstraintOperation::LEQ;
         }
         else {
-            operators[i] = CorcaORBack::MDMQKP::ConstraintOperation::GEQ;
+            operators[i] = CorcaORBack::QKP::ConstraintOperation::GEQ;
         }
     }
 
-    CorcaORBack::MDMQKP::QuadraticProgram qp(std::move(mat), std::move(constraints), std::move(operators));
-    CorcaORBack::MDMQKP::TSTSSolver solver(qp, 1000.0,3.0, 3.0, 1000);
+    CorcaORBack::QKP::QuadraticProgram qp(std::move(mat), std::move(constraints), std::move(operators));
+    CorcaORBack::QKP::TSTSSolver solver(qp, 1000.0,3.0, 3.0, 1000);
     solver.solve();
     CHECK(solver.is_feasible());
 }
