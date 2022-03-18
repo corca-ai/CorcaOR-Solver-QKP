@@ -20,4 +20,4 @@ jobs:
     - name: cmake and make
       run: mkdir build && cd build && cmake .. && make
     - name: UnitTest
-      run: ../bin/UnitTest
+      run: ./bin/UnitTest
