@@ -5,7 +5,7 @@
 #include <string>
 #include <cmath>
 
-namespace CorcaORBack::MDMQKP{
+namespace CorcaORBack::QKP{
     enum class ConstraintOperation{
         LEQ = 0,
         L = 1,

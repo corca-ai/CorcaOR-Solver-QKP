@@ -1,11 +1,11 @@
-#include <MDMQKP/Types.hpp>
-#include <MDMQKP/Solvers.hpp>
+#include <QKP/Types.hpp>
+#include <QKP/Solvers.hpp>
 #include <iostream>
 
 #include <random>
 #include <chrono>
 
-namespace CorcaORBack::MDMQKP{
+namespace CorcaORBack::QKP{
     const double TSTSSolver::gammas[] = {1.9, 2.1, 2.3};
     // No thinking Code without Future
     struct max_st{

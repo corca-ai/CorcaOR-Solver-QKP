@@ -2,10 +2,10 @@
 #include <utility>
 #include <vector>
 
-#include <MDMQKP/Types.hpp>
+#include <QKP/Types.hpp>
 
 
-namespace CorcaORBack::MDMQKP{
+namespace CorcaORBack::QKP{
     class QuadraticSolver{
     protected:
         QuadraticProgram& program;
