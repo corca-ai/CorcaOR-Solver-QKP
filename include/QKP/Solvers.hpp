@@ -71,61 +71,54 @@ namespace CorcaORBack::QKP{
         void solve() override;
     };
 
-    class AcoGraph {
+    class ACOSolver : public QuadraticSolver{ // Ant Colony Optimization
         public:
-            AcoGraph(int num_vertices); // Used in 2D grid
-            void initialize_pheromone_matrix(int min_tau, int max_tau);
-            std::vector<int> explore (int initial_city, int max_vertices_in_path, double alpha, const std::vector<double>& constraints, const std::vector<ConstraintOperation>& operators) ;
-            void evaporate(std::vector<std::vector<int>>& ants, std::vector<double>& score, double best_ant_score, double rho, double min_tau, double max_tau);
-
-        private:
-            int num_vertices;
-            std::vector<std::vector<std::pair<int, double>>> pheromone_matrix;
-            std::vector<int> get_candidate_vertices (const std::vector<int> &ant, const std::vector<double>& constraints, const std::vector<ConstraintOperation>& operators) const;
-            int select_next_vertex (std::vector<int>& ant, const std::vector<int>& candidate_vertices, double alpha) const;
-    };
-
-    class ACO : public QuadraticSolver{ // Ant Colony Optimization
-        public:
-            ACO(
+            ACOSolver(
                 QuadraticProgram& program,
                 int num_ants=30,
-                double alpha=1.,
+                double alpha=1.2,
                 double beta=0.8,
                 double rho=0.995,
                 int stopping_condition=1e9,
                 double min_tau=0.1,
                 double max_tau=1.0,
                 int max_iterations=100,
-                int initial_city=0,
                 int max_vertices_in_path=1000,
                 int verbose_iterations=10
                 );
             void solve() override;
             double evaluate(std::vector<int> ant) const;
-            bool is_all_ants_same();
-            void sort_ants();
-            void set_num_vetices(int num_vertices);
+
             void set_max_iterations(int max_iterations);
             void set_max_vertices_in_path(int max_vertices_in_path);
             void set_verbose_iterations(int verbose_iterations);
+            void set_alpha(double alpha);
+            void set_beta(double beta);
+            void set_rho(double rho);
+            void set_min_tau(double min_tau);
+            void set_max_tau(double max_tau);
             int get_num_vertices() const;
 
         private:
-            int num_vertices;
             const int num_ants;
-            const double alpha;
-            const double beta;
-            const double rho;
+            double alpha;
+            double beta;
+            double rho;
             const int stopping_condition;
-            const double min_tau;
-            const double max_tau; // the maximum value of pheromone, in MMAS tau_0 = max_tau
+            double min_tau;
+            double max_tau; // the maximum value of pheromone, in MMAS tau_0 = max_tau
             int max_iterations;
-            const int initial_city;
             int max_vertices_in_path;
             int verbose_iterations;
 
             std::vector<std::vector<int>> ants;
-            std::vector<AcoGraph> graph;
+            std::vector<std::vector<double>> pheromone_matrix;
+            std::vector<int> get_candidate_vertices (const std::vector<int> &ant) const;
+            int select_next_vertex (std::vector<int>& ant, const std::vector<int>& candidate_vertices) const;
+            void initialize_pheromone_matrix();
+            std::vector<int> explore ();
+            void evaporate(std::vector<double>& score, double best_ant_score);
+            bool is_all_ants_same();
+            void sort_ants();
     };
 }
