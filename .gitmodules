@@ -1,3 +1,6 @@
 [submodule "extern/doctest"]
 	path = extern/doctest
 	url = https://github.com/doctest/doctest
+[submodule "extern/pybind11"]
+	path = extern/pybind11
+	url = https://github.com/pybind/pybind11/
