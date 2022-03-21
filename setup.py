@@ -1,5 +1,4 @@
 import setuptools
-from setuptools import find_packages
 import cmake_build_extension
 
 from pathlib import Path

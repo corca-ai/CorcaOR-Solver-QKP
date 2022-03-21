@@ -2,5 +2,5 @@
 #include "doctest.h"
 
 TEST_CASE("Basic Test"){
-    CHECK(1==1);
+    CHECK(true);
 }
