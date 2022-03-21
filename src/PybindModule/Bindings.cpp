@@ -50,9 +50,10 @@ namespace CorcaORBack::QKP{
         py::class_<TSTSSolver, QuadraticSolver, PyTSTSSolver>(m, "TSTSSolver")
                 .def(py::init<QuadraticProgram& , double , double, double , int >())
                 .def("solve", &TSTSSolver::solve);
+
         py::class_<ACOSolver, QuadraticSolver, PyACOSolver>(m, "ACOSolver")
                 .def(py::init<QuadraticProgram&, int, double, double, double, int, double, double, int, int, int>(),
-                                py::arg("program")
+                                py::arg("program"),
                                 py::arg("num_ants") = 30, 
                                 py::arg("alpha") = static_cast<double>(1.2), 
                                 py::arg("beta") = static_cast<double>(0.8),

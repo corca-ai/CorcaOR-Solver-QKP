@@ -17,7 +17,9 @@ set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 include(CMake/DetermineBuildType.cmake)
 
-add_subdirectory(extern/pybind11)
+if(CALL_FROM_SETUP_PY)
+    add_subdirectory(extern/pybind11)
+endif()
 
 include_directories(include)
 
