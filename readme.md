@@ -5,7 +5,7 @@
 
 Our CorcaOR-Solver-QKP is a tool for solving Quadratic Knapsack Problem in various constraints or environments. We offer two types of solvers for following constraints.
 
-![Our Formulation](https://raw.githubusercontent.com/corca-ai/CorcaOR-Solver-QKP/develop/content/Formulation.svg)
+![Our Formulation](https://raw.githubusercontent.com/corca-ai/CorcaOR-Solver-QKP/develop/content/Formulation.png)
 
 ## TSTS Quadratic Solver
 The original paper[[1]](https://ideas.repec.org/a/eee/ejores/v274y2019i1p35-48.html) introduced linear MDMKP solver, which can have Multi-demand(2) and Multi-Dimensional(1) constraints. While reimplementing the algorithm, we accelerated the algorithm on paper using OpenMP and replaced linear objective function with quadratic objective function. As a result, this solver can solve MDMQKP (Multi-Demand Multi-Dimensional Qudratic Knapsack Problem).
