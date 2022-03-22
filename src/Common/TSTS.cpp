@@ -413,7 +413,7 @@ namespace CorcaORBack::QKP{
                 }
                 ret += new_val;
             }
-            return {ret==0.0, best_val};
+            return {ret==0.0, get_reward()};
         }
 
         if(!non_tabus.empty()){
