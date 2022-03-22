@@ -75,9 +75,9 @@ Because this benchmark only evaluates linear reward, we inserted the reward valu
 You can download dataset in https://grafo.etsii.urjc.es/optsicom/binaryss/ .
 
 ## TODOs
-  - Making Wrappers and More general solvers for many cases.
+-   Making Wrappers and More general solvers for many cases.
 
 ## References
 
- 1. Lai, Xiangjing & Hao, Jin-Kao & Yue, Dong, 2019. "Two-stage solution-based tabu search for the multidemand multidimensional knapsack problem," European Journal of Operational Research, Elsevier, vol. 274(1), pages 35-48. <https://ideas.repec.org/a/eee/ejores/v274y2019i1p35-48.html>
- 2. Solnon, Christine and Bridge, Derek, 2006. "An Ant Colony Optimization Meta-Heuristic for Subset Selection Problems," System Engineering using Particle Swarm Optimization, Nova Science publishers, pages 3-25. <https://hal.archives-ouvertes.fr/hal-01541555/file/PSO2006.pdf>
+1.  Lai, Xiangjing & Hao, Jin-Kao & Yue, Dong, 2019. "Two-stage solution-based tabu search for the multidemand multidimensional knapsack problem," European Journal of Operational Research, Elsevier, vol. 274(1), pages 35-48. <https://ideas.repec.org/a/eee/ejores/v274y2019i1p35-48.html>
+2.  Solnon, Christine and Bridge, Derek, 2006. "An Ant Colony Optimization Meta-Heuristic for Subset Selection Problems," System Engineering using Particle Swarm Optimization, Nova Science publishers, pages 3-25. <https://hal.archives-ouvertes.fr/hal-01541555/file/PSO2006.pdf>
