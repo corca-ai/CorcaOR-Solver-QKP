@@ -11,11 +11,15 @@ CTestTestfile.cmake
 cmake-file-debug/
 
 # Visual Studio cache/options directory
+.vscode/
 .vs/
 bin/
 build/
+lib/
+dataset/
 
 # User-specific stuff
+.idea/*
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
@@ -91,3 +95,5 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
+
+CorcaOR_Solver_QKP.egg-info
