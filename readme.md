@@ -15,11 +15,15 @@ We also implemented ACO Solver. It can have Multi-Dimensional(1) constraints and
 
 ## Benchmark Results
 
-More Precise Benchmark is needed
+There isn't any common metric that can evaluate our Algorithms. We'll soon release new dataset for our use case. We just used MDMKP dataset to check successful reimplementation of the TSTS.
+
+Here's our benchmark result.
+
+
 
 
 ## TODOs
-- Making Wrappers and More general solvers for multiple environments.
+- Making Wrappers and More general solvers for many cases.
 
 ## References
 

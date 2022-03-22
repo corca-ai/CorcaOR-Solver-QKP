@@ -3,7 +3,7 @@ set(cpp_target_name "CPP_${target_name}")
 
 project(${target_name})
 
-set(CMAKE_PROJECT_VERSION "0.0.1")
+set(CMAKE_VERSION 3.18.0)
 
 cmake_minimum_required(VERSION 3.18)
 

@@ -16,6 +16,7 @@ cmake-file-debug/
 bin/
 build/
 lib/
+dataset/
 
 # User-specific stuff
 .idea/*
