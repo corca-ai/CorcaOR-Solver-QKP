@@ -13,14 +13,14 @@ if(BUILD_TYPE STREQUAL "CUDA")
     set_target_properties(${cpp_target_name} PROPERTIES LINKER_LANGUAGE CUDA)
     set_target_properties(${cpp_target_name} PROPERTIES POSITION_INDEPENDENT_CODE TRUE)
 
-    target_link_libraries(${cpp_target_name} INTERFACE OpenMP::OpenMP_CXX)
+    target_link_libraries(${cpp_target_name} PUBLIC OpenMP::OpenMP_CXX)
 else()
     find_package(OpenMP REQUIRED)
 
     file(GLOB_RECURSE back_sources ${CMAKE_CURRENT_SOURCE_DIR}/CPU/*.cpp)
     add_library(${cpp_target_name} STATIC ${back_sources} ${common_sources})
     set_target_properties(${cpp_target_name} PROPERTIES POSITION_INDEPENDENT_CODE TRUE)
-    target_link_libraries(${cpp_target_name} INTERFACE OpenMP::OpenMP_CXX)
+    target_link_libraries(${cpp_target_name} PUBLIC OpenMP::OpenMP_CXX)
 endif()
 
 # Build Python Binding
